@@ -16,8 +16,12 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+	#¼òÀú
     url(r'^resume/$', 'resume.views.resume'),
+	#×¢²á
     url(r'^register/$','zp.views.register'),
+	#µÇÂ¼
     url(r'^login/$','zp.views.login'),
+	#Ê×Ò³
     url(r'^','zp.views.login'),
 )

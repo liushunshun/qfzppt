@@ -77,8 +77,10 @@ def resume(req):
                 #resu.resumeFile = filePath
             
             resu.save()
+			#zt=1表示投递简历成功
             return render_to_response('resume.html', {'zt': 1})
     else:
         rf = ResumeForm() 
+	#从session中获得当前登录用户名返回
     username = req.session['username']
     return render_to_response('resume.html', {'rf':rf,'username':username})

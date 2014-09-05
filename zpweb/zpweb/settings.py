@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'zp',
+    'resume',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,6 +57,7 @@ WSGI_APPLICATION = 'zpweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -68,7 +70,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'zh-CN'
 
-TIME_ZONE = 'Asia/shanghai'
+#TIME_ZONE = 'Asia/shanghai'
 
 USE_I18N = True
 

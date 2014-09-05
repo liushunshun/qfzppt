@@ -1,4 +1,7 @@
-#Wed Sep 03 21:26:31 CST 2014
+#Fri Sep 05 17:42:30 CST 2014
 eclipse.preferences.version=1
+encoding//resume/admin.py=utf-8
+encoding//resume/models.py=utf-8
+encoding//resume/views.py=utf-8
 encoding//zp/models.py=utf-8
 encoding//zp/views.py=utf-8

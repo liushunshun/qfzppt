@@ -26,15 +26,15 @@
         <div class="modal-body">
         <form class="form-horizontal" role="form" method="post">
           <div class="form-group">
-            <label for="id_username" class="col-sm-2 control-label">邮箱</label>
+            <label for="id_username" class="col-sm-2 control-label">用户名</label>
             <div class="col-sm-10">
-              {{ uf.username}}
+              <input id="id_username" name="username" class="form-control" placeholder="请输入用户名"  required/>
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
-              {{uf.password}}
+              <input id="id_password" type="password" name="password" class="form-control" placeholder="请输入密码" required/>
             </div>
           </div>
           </div>
@@ -50,6 +50,11 @@
   </div>
   <!-- /.modal --> 
 </div>
+{% if zt == 1 %}
+<script type="text/javascript">
+alert("用户名或密码错误！");
+</script>
+{% endif %}
 <!-- 登录对话框 end-->
 <!--<div class="index-say">
   <div class="index-say-inner">
@@ -61,14 +66,5 @@
 <center style="margin-top:50px;"></center>
 <script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script> 
 <script src="/static/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-	$("#id_username").addClass("form-control"); 
-	$("#id_username").attr("placeholder","请输入邮箱"); 
-	$("#id_password").addClass("form-control"); 
-	$("#id_password").attr("placeholder","请输入密码"); 
-}); 
-	
-</script>
 </body>
 </html>

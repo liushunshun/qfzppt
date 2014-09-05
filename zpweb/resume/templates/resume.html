@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欢迎加入钱方科技</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="/static/js/jquery-1.11.0.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/My97DatePicker/WdatePicker.js"></script>
+<link href="/static/css/home.css" rel="stylesheet" type="text/css">
+<link href="/static/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+<link href="/static/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+</head>
+{% if zt == 1 %}
+<script type="text/javascript">
+alert("投递简历成功！");
+</script>
+{% endif %}
+<body>
+	<div class="header">
+		<div class="header_logo">
+			<img src="/static/css/img/logo.png" class="logo" />
+		</div>
+		<div class="login_link">
+			<span>欢迎：{{username}}</span>
+			<button class="btn btn-default login-btn" onclick="window.location.href ='/login/'">注销</button>
+		</div>
+	</div>
+	<div class="nav_header"></div>
+	<div class="container">
+        <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+	<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          个人基本信息
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="id_username" class="col-sm-4 control-label">姓名</label>
+            <div class="col-sm-6">
+              <input type="text" name="name" id="id_name" class="form-control" placeholder="请输入真实姓名" required/>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="id_sex" class="col-sm-2 control-label">性别</label>
+            <div class="col-sm-6">
+				<label class="radio-inline">
+				  <input type="radio" name="sex" id="id_sex1" value="1" required> 男
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="sex" id="id_sex2" value="2" required> 女
+				</label>
+            </div>
+          </div>
+         </div>
+         
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="id_email" class="col-sm-4 control-label">邮箱</label>
+            <div class="col-sm-6">
+            <input type="email" name="email"
+					class="form-control" id="id_email" placeholder="请输入邮箱地址" required
+					pattern="^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$"
+					title="邮箱正确格式：xxx@xxx.xxx">
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="id_headImg" class="col-sm-2 control-label">照片</label>
+            <div class="col-sm-6">
+              <input type="file" id="id_headImg" name="headImg"/>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="id_tel" class="col-sm-4 control-label">电话</label>
+            <div class="col-sm-6">
+            <input onkeyup="value=value.replace(/[^\d]/g,'')" type="text" id="id_tel" name="tel"  class="form-control" placeholder="请输入手机号码" required />
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="id_education" class="col-sm-2 control-label">学历</label>
+            <div class="col-sm-6">
+            	<select class="form-control" name="education" required>
+				  <option value="">请选择...</option>
+				  <option value="1">本科</option>
+				  <option value="2">硕士</option>
+				  <option value="3">博士</option>
+				  <option value="4">博士以上</option>
+				  <option value="5">专科及以下</option>
+				</select>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          教育经历
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<div class="row">
+      		
+          <div class="form-group col-md-12">
+            <label for="id_edu_strdate" class="col-sm-3 control-label">开始日期</label>
+            <div class="col-sm-6">
+            	<input class="form-control Wdate" name="edu_strdate" id="id_edu_strdate" type="text" onClick="WdatePicker()" placeholder="请选择开始日期">
+            </div>
+          </div>
+         
+          <div class="form-group col-md-12">
+            <label for="id_edu_enddate" class="col-sm-3 control-label">结束时间</label>
+            <div class="col-sm-6">
+            	<input class="form-control Wdate" type="text" name="edu_enddate" id="id_edu_enddate" onClick="WdatePicker()" placeholder="请选择结束日期">
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_school" class="col-sm-3 control-label">所在学校</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_school" name="school"  class="form-control" placeholder="请输入学校"/>            
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_major" class="col-sm-3 control-label">所学专业</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_major" name="major"  class="form-control" placeholder="请输入专业"/>
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_cureducation" class="col-sm-3 control-label">学历</label>
+            <div class="col-sm-6">
+            	<select class="form-control" name="cureducation">
+				  <option value="1">本科</option>
+				  <option value="2">硕士</option>
+				  <option value="3">博士</option>
+				  <option value="4">博士以上</option>
+				  <option value="5">专科及以下</option>
+				</select>
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_course" class="col-sm-3 control-label">主修课程</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_course" name="course"  class="form-control" placeholder="请输入主修课程"/>
+            </div>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+         工作经历
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<div class="row">
+      		
+          <div class="form-group col-md-12">
+            <label for="id_work_strdate" class="col-sm-3 control-label">开始日期</label>
+            <div class="col-sm-6">
+            	<input class="form-control Wdate" name="work_strdate" id="id_work_strdate" type="text" onClick="WdatePicker()" placeholder="请选择开始日期">
+            </div>
+          </div>
+         
+          <div class="form-group col-md-12">
+            <label for="id_work_enddate" class="col-sm-3 control-label">结束时间</label>
+            <div class="col-sm-6">
+            	<input class="form-control Wdate" name="work_enddate" id="work_enddate" type="text" onClick="WdatePicker()" placeholder="请选择结束日期">
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_company" class="col-sm-3 control-label">公司名称</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_company" name="company"  class="form-control" placeholder="请输入公司名称"/>            
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_position" class="col-sm-3 control-label">职位名称</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_position" name="position"  class="form-control" placeholder="请输入职位名称"/>
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_salary" class="col-sm-3 control-label">薪资</label>
+            <div class="col-sm-6">
+            	<select class="form-control" name="salary">
+				  <option value="1">保密</option>
+				  <option value="2">1000-5000</option>
+				  <option value="3">5000-8000</option>
+				  <option value="4">8000-10000</option>
+				  <option value="5">10000-20000</option>
+				  <option value="5">20000+</option>
+				</select>
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_workdisc" class="col-sm-3 control-label">工作描述</label>
+            <div class="col-sm-6">
+            	<textarea class="form-control" rows="4" name="workdisc" id="id_workdisc" placeholder="请输入工作描述"></textarea>
+            </div>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+         项目经验
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<div class="row">
+      		
+      	  <div class="form-group col-md-12">
+            <label for="id_projectname" class="col-sm-3 control-label">项目名称</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_projectname" name="projectname"  class="form-control" placeholder="请输入项目名称"/>            
+            </div>
+          </div>
+          	
+          <div class="form-group col-md-12">
+            <label for="id_project_strdate" class="col-sm-3 control-label">开始日期</label>
+            <div class="col-sm-6">
+            	<input class="form-control Wdate" name="project_strdate" id="id_project_strdate" type="text" onClick="WdatePicker()" placeholder="请选择开始日期">
+            </div>
+          </div>
+         
+          <div class="form-group col-md-12">
+            <label for="id_project_enddate" class="col-sm-3 control-label">结束时间</label>
+            <div class="col-sm-6">
+            	<input class="form-control Wdate" name="project_enddate" id="id_project_enddate" type="text" onClick="WdatePicker()" placeholder="请选择结束日期">
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_job" class="col-sm-3 control-label">职务</label>
+            <div class="col-sm-6">
+            	<input type="text" id="id_job" name="job"  class="form-control" placeholder="请输入职务"/>            
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_projectdisc" class="col-sm-3 control-label">项目描述</label>
+            <div class="col-sm-6">
+            	<textarea class="form-control" name="projectdisc" id="id_projectdisc" rows="4" placeholder="请输入项目描述"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="id_projectresp" class="col-sm-3 control-label">项目职责</label>
+            <div class="col-sm-6">
+            	<textarea class="form-control" name="projectresp" id="id_projectresp" rows="4" placeholder="请输入项目职责"></textarea>
+            </div>
+          </div>
+          
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+         附件上传
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<div class="row">
+      		
+      	 <div class="form-group col-md-6">
+            <label for="id_resumeFile" class="col-sm-2 control-label">附件</label>
+            <div class="col-sm-6">
+              <input type="file" id="id_resumeFile" name="resumeFile"/>
+            </div>
+          </div>
+
+          
+         </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+	<div class="container" style="text-align:center">
+		<button type="submit" class="btn btn-primary" style="margin-left:300px">提交</button>
+	</div>
+        </form>
+	</div>
+	<div class="footer">2014 © 钱方科技</div>
+	<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#id_name").addClass("form-control"); 
+	$("#id_name").attr("placeholder","请输入真实姓名"); 
+}); 
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用户登录</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet">
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<link href="/static/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!-- 登录对话框 start-->
+<div class="container"> 
+  <!-- Modal -->
+  <div class="modal fade in" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;margin-top:60px;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         <!--  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+          <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+        </div>
+        <div class="modal-body">
+        <form class="form-horizontal" role="form" method="post">
+          <div class="form-group">
+            <label for="id_username" class="col-sm-2 control-label">邮箱</label>
+            <div class="col-sm-10">
+              {{ uf.username}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+              {{uf.password}}
+            </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" onclick="window.location.href ='/register/'">注册</button>
+            <button type="submit" class="btn btn-primary">登录</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content --> 
+    </div>
+    <!-- /.modal-dialog --> 
+  </div>
+  <!-- /.modal --> 
+</div>
+<!-- 登录对话框 end-->
+<!--<div class="index-say">
+  <div class="index-say-inner">
+  	<h3 class="index-say-title">他们怎么说</h3>
+
+  </div>
+</div>-->
+<!--网页尾部-->
+<center style="margin-top:50px;"></center>
+<script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#id_username").addClass("form-control"); 
+	$("#id_username").attr("placeholder","请输入邮箱"); 
+	$("#id_password").addClass("form-control"); 
+	$("#id_password").attr("placeholder","请输入密码"); 
+}); 
+	
+</script>
+</body>
+</html>

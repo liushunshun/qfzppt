@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, button, select, textarea, pre {margin:0px; padding:0px;font-size: 12px;font-family: Arial, "宋体";background:none;}
+html {color: #333;background: #fff;overflow-y: scroll;}
+.header{width:980px; height:75px; margin:0 auto;line-height:75px;}
+.header_logo{width:330px;  right no-repeat; float:left;}
+.login_link{float:right; }
+.login-btn{font-weight: bold;height: 32px;width: 64px; background-color:#F9F9F9}
+.nav_header{width:100%; height:20px; background:url(img/reg_hr_e84a6d3b.png) no-repeat center;}
+
+.main_content{width:980px; margin:0 auto; padding:0 200px;}
+.footer{width:100%;height50px; margin-top:100px; text-align:center;}
+.validate_style{width:300px;}
+.validate_span {margin-left:305px;margin-top:-30px;}
+.validate_span a {margin-left:5px;}
+
+.login_header{width:100%;height:81px;background:#fff;}
+.login_header_main{width:940px;height:81px;margin:0px auto;}
+.logo_img{width:100px;height:42px;margin-top:25px;}
+#login-wraper {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  margin-top: -185px;
+  margin-left: -235px;
+  padding: 25px;
+  width: 420px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+/* line 97, ../sass/typica-login.scss */
+.login-form legend {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+}
+/* line 102, ../sass/typica-login.scss */
+.login-form .body {
+  padding-bottom: 5px;
+}
+/* line 106, ../sass/typica-login.scss */
+.login-form .footer {
+  margin-top: 20px;
+}
+/* line 108, ../sass/typica-login.scss */
+.login-form .footer .checkbox.inline {
+  display: inline;
+}
+/* line 110, ../sass/typica-login.scss */
+.login-form .footer .checkbox.inline input[type="checkbox"] {
+  float: none;
+  margin-top: -4px;
+}
+/* line 115, ../sass/typica-login.scss */
+.login-form .footer .btn {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-left: 15px;
+  padding: 7px 25px;
+  background-image: none;
+}
+/* line 17, D:/DropBox/bootstrap/typica-login/sass/includes/_fonts.scss */
+.login-form legend {
+  font-family: 'Microsoft YaHei';
+  font-size: 36px;
+  font-weight: 300;
+  color: #333333;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* line 24, D:/DropBox/bootstrap/typica-login/sass/includes/_fonts.scss */
+.login-form label {
+  font-family: 'Lato', Helvetica, sans-serif;
+  font-size: 20px;
+  color: #333333;
+  font-weight: 300;
+}
+.login-form input[type="text"]{width:180px;height:30px;margin-bottom:10px;}
+.login-form input[type="password"]{width:180px;height:30px;}
+footer.white {
+  padding-top: 20px;
+  height: 50px;
+  background: white;
+  text-align: center;
+}
+footer.navbar-fixed-bottom {
+  font-size: 16px;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  line-height: 18px;
+  font-weight: 400;
+}

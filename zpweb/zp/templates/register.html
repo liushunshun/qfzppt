@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>欢迎新用户注册</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="/static/js/jquery-1.11.0.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<link href="/static/css/home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="header_logo">
+			<img src="/static/css/img/logo.png" class="logo" />
+		</div>
+		<div class="login_link">
+			<span>我已注册，现在就</span>
+			<button class="btn btn-default login-btn" onclick="window.location.href ='/login/'">登录</button>
+		</div>
+	</div>
+	<div class="nav_header"></div>
+	<div class="main_content">
+		<form role="form" method="post">
+			<div class="form-group">
+				<label for="email">邮 箱</label>
+				<!-- <input type="email" name="email"
+					class="form-control" id="email" placeholder="请输入邮箱地址" required
+					pattern="^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$"
+					title="邮箱正确格式：xxx@xxx.xxx"> -->
+				{{uf.username}}
+			</div>
+			<div class="form-group">
+				<label for="password">密 码</label> 
+				{{uf.password}}
+			</div>
+			<div class="form-group">
+				<label for="password">确认密码</label> 
+				{{uf.passwordConfirm}}
+			</div>
+			<div class="checkbox">
+				<label> <input type="checkbox"
+					onclick="enableSubmitBtn(this)">我已阅读并接受<a>《用户协议》</a>
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default login-btn"
+				id="regist_submit" disabled="disabled">提交</button>
+		</form>
+	</div>
+
+	<div class="footer">2014 © 钱方科技</div>
+	<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#id_username").addClass("form-control"); 
+		$("#id_username").attr("placeholder","请输入邮箱"); 
+		$("#id_password").addClass("form-control"); 
+		$("#id_password").attr("placeholder","请输入密码"); 
+		$("#id_passwordConfirm").addClass("form-control"); 
+		$("#id_passwordConfirm").attr("placeholder","请再次输入密码"); 
+	});
+		function enableSubmitBtn(obj) {
+			if (obj.checked) {
+				$("#regist_submit").removeAttr("disabled")
+			} else {
+				$("#regist_submit").attr("disabled", "disabled");
+			}
+		}
+	</script>
+</body>
+</html>
